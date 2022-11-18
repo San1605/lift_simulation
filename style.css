@@ -1,0 +1,130 @@
+* {
+    background-color: #17454b;
+}
+
+.heading {
+    font-size: 8rem;
+    color: powderblue;
+    text-align: center;
+}
+
+.inputform {
+    margin-top: 2rem;
+    text-align: center;
+    margin: auto;
+    height: 25rem;
+    width: 25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.floor {
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 2rem;
+    height: 5rem;
+    width: 30rem;
+    border: 6px solid black;
+    font-size: 2.5rem;
+    color: black;
+    background-color: powderblue;
+}
+
+.lift {
+    margin-top: 2rem;
+    text-align: center;
+    border-radius: 2rem;
+    height: 5rem;
+    width: 30rem;
+    border: 6px solid black;
+    font-size: 2.5rem;
+    color: black;
+    background-color: powderblue;
+}
+
+.generate {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    height: 6rem;
+    width: 15rem;
+    border: 6px solid black;
+    border-radius: 1rem;
+    background-color: powderblue;
+
+}
+
+input::placeholder {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.hide {
+    display: none;
+}
+
+.section {
+    margin-top: 2rem;
+    font-size: 5rem;
+    height: 18rem;
+    width: 100%;
+    border: 6px solid black;
+    display: flex;
+    align-items: center;
+    align-content: flex-start;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.left {
+
+    height: 14rem;
+    width: 14rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.call_btn {
+    color: powderblue;
+    cursor: pointer;
+    /* margin: 0; */
+    height: 5rem;
+    width: 8rem;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-radius: 1rem;
+}
+
+.floor_id {
+    margin: 0;
+    height: 6rem;
+    width: 10rem;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-size: 3.2rem;
+    color: powderblue;
+
+}
+
+.lifts {
+    /* background-color: powderblue; */
+    border-radius: 2rem;
+    margin-left: 3rem;
+    height: 13rem;
+    width: 10rem;
+    text-align: center;
+    border: 1rem solid powderblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
