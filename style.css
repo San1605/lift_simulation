@@ -2,6 +2,9 @@
     background-color: #17454b;
 }
 
+html{
+    font-size: 50%;
+}
 .heading {
     font-size: 8rem;
     color: powderblue;
@@ -14,12 +17,10 @@
     margin: auto;
     height: 25rem;
     width: 25rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
 }
 
 .floor {
@@ -127,4 +128,29 @@ input::placeholder {
     align-items: center;
     justify-content: center;
 
+}
+
+
+
+.door{
+    /* background-color: ; */
+    height: 100%;
+    width: 50%;
+    transition: all 2.5s;
+}
+
+.left-door{
+    border-right: 1px solid powderblue;
+}
+
+.right-door{
+    border-left: 1px solid powderblue;
+}
+
+.left-move{
+    transform: translateX(-100%);
+}
+
+.right-move{
+    transform: translateX(100%);
 }

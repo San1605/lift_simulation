@@ -33,7 +33,7 @@ function makefloors(floors) {
         var floorId = `floor-${i}`;
         floor.id = `floor-${i}`;
 
-        floor.innerHTML =`<section class="floor-details">
+        floor.innerHTML = `<section class="floor-details">
             <div class="left">
             <p class="floor_id">Floor-${i}</p> 
             <button class="call_btn">CALL</button>
@@ -46,12 +46,19 @@ function makefloors(floors) {
     }
 }
 
+
+
+
 function makelifts(lifts) {
     const firstfloor = document.querySelector("#floor-0");
     for (let j = 1; j <= lifts; j++) {
-        var lift = document.createElement("div");
+        var lift = document.createElement("section");
         lift.classList.add('lifts')
         lift.id = `lift-${j}`
+        lift.innerHTML = `
+         <section class="door left-door"></section>
+         <section class="door right-door"></section>
+        `;
         firstfloor.appendChild(lift);
         available_lift.set(`lift-${j}`, true);
         lift_position.set(`lift-${j}`, 0);
@@ -81,7 +88,7 @@ function movelift(called_floorid, liftId) {
     const prevFloor = lift_position.get(liftId);
     const floordiff = Math.abs(floorNumber - prevFloor);
     const transitionDuration = floordiff * 2;
-    lift.style.transform = `translateY(-${floorNumber * 20.5}rem)`;
+    lift.style.transform = `translateY(-${floorNumber * 21}rem)`;
     lift.style.transition = `all ${transitionDuration}s`;
     setTimeout(() => {
         for_pending(called_floorid, liftId);
@@ -111,10 +118,27 @@ function liftcall(event) {
 }
 
 function for_pending(called_floorid, liftId) {
-    available_lift.set(liftId, true);
-    if (pending_calls.length > 0) {
-        const remaining = pending_calls[0];
-        pending_calls.shift();
-        movelift(remaining, liftId);
-    }
+
+
+    const lift = document.querySelector(`#${liftId}`);
+    const leftDoor = lift.querySelector(".left-door");
+    const rightDoor = lift.querySelector(".right-door");
+    leftDoor.classList.add("left-move");
+    rightDoor.classList.add("right-move");  
+    setTimeout(() => {
+        leftDoor.classList.remove("left-move");
+        rightDoor.classList.remove("right-move"); 
+        setTimeout(() => {
+            available_lift.set(liftId, true);
+            if (pending_calls.length > 0) {
+                const remaining = pending_calls[0];
+                pending_calls.shift();
+                movelift(remaining, liftId);
+            }
+        }, 2500);
+    }, 2500);
+
+
+
+   
 }
